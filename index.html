@@ -5,27 +5,81 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Mamezi</title>
+	<title>Gorąca promocja</title>
 	<link rel="stylesheet" href="dist/index.css">
 </head>
 
 <body>
 	<div class="page">
 		<header class="header">
-
+			<div class="header__promo promo">
+				<div class="promo__img-wrapper">
+					<img src="assets/images/clock.png" alt="Ikona zegara">
+				</div>
+				<div class="promo__headline">
+					<h1>gorąca<br>promocja</h1>
+				</div>
+				<div class="promo__text">
+					<p>właśnie trwa!</p>
+				</div>
+				<div class="promo__circle">
+					<img src="assets/images/truck.png" alt="Ikona samochodu dostawczego">
+					<p>dostawa<br>gratis!</p>
+				</div>
+			</div>
+			<div class="header__percent-info percent-info">
+				<div class="percent-info__text">
+					<p>rabaty nawet do</p>
+				</div>
+				<div class="percent-info__number">
+					<p>80</p>
+					<span>%</span>
+				</div>
+			</div>
+			<div class="timer">				
+				<p class="timer__info">do końca pozostało:</p>
+				<div class="timer__clock js-timer">
+					<div class="timer__box">
+						<p class="timer__number">4</p>
+						<p class="timer__unit">dni</p>
+					</div>
+					<span>:</span>
+					<div class="timer__box">
+						<p class="timer__number">11</p>
+						<p class="timer__unit">godz.</p>
+					</div>
+					<span>:</span>
+					<div class="timer__box">
+						<p class="timer__number">16</p>
+						<p class="timer__unit">min</p>
+					</div>
+					<span>:</span>
+					<div class="timer__box">
+						<p class="timer__number">12</p>
+						<p class="timer__unit">sek.</p>
+					</div>
+				</div>				
+			</div>
 		</header>
+		<div class="bar">
+			<div class="bar__item">
+				<img src="assets/images/clock-icon.png" alt="Ikona zegara">
+				<p>prodykty na godzinie <span>10:00</span></p>
+			</div>
+			<div class="bar__item bar__item--right">
+				<img src="assets/images/alert-circle.png" alt="">
+				<p>Akcja "Gorąca promocja" nie łączy się z innymi promocjami</p>
+			</div>
+		</div>
 		<main>
 			<div class="products js-products"></div>
-			<div class="pagination">
-				<button class="js-button pagination__button">2</button>
-				<button class="js-button pagination__button">4</button>
-				<button class="js-button pagination__button">6</button>
-				<button class="js-button pagination__button">8</button>
-			</div>
 		</main>
+		<div class="pagination">
+			<button class="js-button pagination__button">2</button>
+			<button class="js-button pagination__button">4</button>
+			<button class="js-button pagination__button">8</button>
+		</div>
 	</div>
-
-
 	<script defer async src="dist/index.js"></script>
 </body>
 

@@ -1,0 +1,39 @@
+.timer {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+
+    border: 3px solid $white;
+    min-width: 340px;
+
+    &__info {
+        text-align: center;
+        font-size: 16px;
+        color: $white;
+        text-transform: uppercase;
+    }
+
+    &__clock {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    &__box {
+        text-align: center;
+    }
+
+    &__number,
+    span {
+        font-size: 36px;
+        color: $white;
+        font-weight: 700;
+    }
+
+    &__unit {
+        font-size: 16px;
+        color: white;
+    }
+}

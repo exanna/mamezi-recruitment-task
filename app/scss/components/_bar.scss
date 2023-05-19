@@ -1,0 +1,29 @@
+.bar {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    
+    @media (min-width: 810px) {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+
+    &__item {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        gap: 5px;
+
+        @media (min-width: 810px) {
+            width: auto;
+        }
+    }
+
+    &__item--right {
+        @media (min-width: 810px) {
+            align-self: flex-end;
+        }
+    }
+}

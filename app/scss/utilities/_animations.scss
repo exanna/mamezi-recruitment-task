@@ -1,0 +1,17 @@
+@keyframes fadeIn {
+    0% {
+      transform: translateY(-50px);
+    }
+
+    25% {
+        transform: rotate(3deg);
+    }
+
+    50% {
+        transform: rotate(0);
+    }
+
+    100% {
+      transform: translateY0();
+    }
+}

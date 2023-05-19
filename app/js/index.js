@@ -10,21 +10,33 @@ const loadProducts = (productCount) => {
 
             const html = limitedData
                 .map((item) => {
+                    let quantity;
+                    if(item.availability.name === "ostatnia sztuka!") {
+                        quantity = "1";
+                    } else if (item.availability.name === "brak towaru"){
+                        quantity = "0";
+                    } else if (item.availability.name === "mała ilość") {
+                        quantity = "<5"
+                    }
+
                     return `                 
-                    <article class="product">
+                    <article class="product animate">
                         <div class="product__bar">
                             <div class="count">
-                                <img src="assets/images/cart.png" alt="Ilość sztuk" class="cart" />
+                                <div class="cart">
+                                    <img src="assets/images/cart.png" alt="Ilość sztuk" class="cart" />
+                                    <p>sztuk: ${quantity}</p>
+                                </div>
                                 <span>oszczędzasz: ${item.price.gross.base_float - item.price.gross.promo_float} zł</span>
                             </div>
                         </div>
                         <div class="product__image">
-                            <img src="" alt="" />
+                            <img src="https://www.mamezi.pl/praca/front/products/upload/${item.main_image}.png" alt="" />
                         </div>
                         <div class="product__info">
-                            <div class="product__price">
-                                <p class="product__price--new">${item.price.gross.final_float} zł</p>
-                                <p class="product__price--old">${item.price.gross.base_float} zł</p>
+                            <div class="price">
+                                <p class="price__new">${item.price.gross.final_float} zł</p>
+                                <p class="price__old">${item.price.gross.base_float} zł</p>
                             </div>
                             <div class="product__name">
                                 <p>${item.name}</p>

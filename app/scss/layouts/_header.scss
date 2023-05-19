@@ -1,0 +1,36 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    background-color: $red;
+    padding: 30px;
+}
+
+.promo {
+    display: flex;
+}
+
+.percent-info { 
+    display: inline-block;
+    vertical-align: top;
+
+    &__text {
+        text-transform: uppercase;
+        font-size: 18px;
+
+    }
+
+    &__number {
+        display: inline-flex;
+        font-size: 144px;
+        color: $yellow;
+        
+        p {
+            text-indent: -10px;
+            line-height: 1;
+        }
+        span {
+            font-size: 60px;
+        }
+    }
+    
+}
