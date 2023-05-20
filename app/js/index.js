@@ -1,9 +1,9 @@
-const DATA = "https://www.mamezi.pl/praca/front/products/data.json";
+const DATA_URL = "https://www.mamezi.pl/praca/front/products/data.json";
 const productsWrapper = document.querySelector(".js-products");
 const buttonList = document.querySelectorAll(".js-button");
-  
+
 const loadProducts = (productCount) => {
-    fetch(DATA)
+    fetch(DATA_URL)
         .then((response) => response.json())
         .then((data) => {
             const limitedData = data.list.slice(0, productCount);
@@ -11,6 +11,7 @@ const loadProducts = (productCount) => {
             const html = limitedData
                 .map((item) => {
                     let quantity;
+                    
                     if(item.availability.name === "ostatnia sztuka!") {
                         quantity = "1";
                     } else if (item.availability.name === "brak towaru"){
@@ -20,7 +21,7 @@ const loadProducts = (productCount) => {
                     }
 
                     return `                 
-                    <article class="product animate">
+                    <article class="product animate" tabindex="0">
                         <div class="product__bar">
                             <div class="count">
                                 <div class="cart">
@@ -31,7 +32,7 @@ const loadProducts = (productCount) => {
                             </div>
                         </div>
                         <div class="product__image">
-                            <img src="https://www.mamezi.pl/praca/front/products/upload/${item.main_image}.png" alt="" />
+                            <img src="https://www.mamezi.pl/praca/front/products/upload/${item.main_image}.png" alt="Zjęcie przedmiotu" />
                         </div>
                         <div class="product__info">
                             <div class="price">
@@ -49,8 +50,7 @@ const loadProducts = (productCount) => {
                 })
                 .join("");
 
-            productsWrapper.innerHTML = html;
-    
+            productsWrapper.innerHTML = html;    
         })
         .catch((error) => {
             console.log("Wystąpił błąd:", error);
@@ -64,6 +64,32 @@ buttonList.forEach((button) => {
     });
 });
 
+const updatePromotionTimer = () => {
+    const targetDate = new Date("2023-05-28T00:00:00");  
+    const now = new Date();
+    const difference = targetDate - now;
+
+    const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((difference / (1000 * 60)) % 60);
+    const seconds = Math.floor((difference / 1000) % 60);
+
+    document.querySelector(".js-days").textContent = days.toString().padStart(2, "0");
+    document.querySelector(".js-hours").textContent = hours.toString().padStart(2, "0");
+    document.querySelector(".js-minutes").textContent = minutes.toString().padStart(2, "0");
+    document.querySelector(".js-seconds").textContent = seconds.toString().padStart(2, "0");
+
+    if (difference <= 0) {
+        clearInterval(timer);
+    }
+
+    setTimeout(updatePromotionTimer, 1000);
+}
+
 window.addEventListener("load", () => {
     loadProducts(4);
 })
+
+updatePromotionTimer();
+
+const timer = setInterval(updateTimer, 1000)

@@ -12,5 +12,15 @@
         border: none;
         color: $red;
         font-size: 1.2rem;
+        transition: transform .2s ease;
+
+        &:hover {
+            cursor: pointer;
+            transform: scale(1.05);
+        }
+
+        &:focus {
+            outline: 1px solid $yellow;
+        }
     }
 }

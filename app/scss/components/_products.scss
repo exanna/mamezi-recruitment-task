@@ -32,6 +32,10 @@
     &__producer {
         color: $gray;
     }
+
+    &:focus {
+        outline: 1px solid $yellow;
+    }
 }
 
 .count {
