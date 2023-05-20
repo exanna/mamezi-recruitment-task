@@ -11,7 +11,7 @@ const loadProducts = (productCount) => {
             const html = limitedData
                 .map((item) => {
                     let quantity;
-                    
+
                     if(item.availability.name === "ostatnia sztuka!") {
                         quantity = "1";
                     } else if (item.availability.name === "brak towaru"){
@@ -92,4 +92,4 @@ window.addEventListener("load", () => {
 
 updatePromotionTimer();
 
-const timer = setInterval(updateTimer, 1000)
+
