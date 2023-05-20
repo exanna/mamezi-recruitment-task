@@ -1,22 +1,22 @@
 .header {
+    padding: 2%; 
     display: flex;
     flex-wrap: wrap;
     background-color: $red;
     gap: 50px;
-    padding: 2%; 
 
     @include mq(small) {
         gap: 20px;
     }
 
     @include mq(medium) {
-        gap: 20px;
         padding: 2% 5%;
+        gap: 20px;
     }
 
     @include mq(large) {
-        flex-wrap: nowrap;
         padding: 2% 2%;
+        flex-wrap: nowrap;
     }
 
     @include mq(extra-large) {
@@ -24,8 +24,8 @@
     }
 
     &__promo {
-        display: flex;
         width: 100%;
+        display: flex;
     }
 
     &__item {
@@ -50,23 +50,21 @@
     }
 
     &__text {
-        text-transform: uppercase;
-        font-size: 16px;
         width: 100%;
+        font-size: 16px;
+        text-transform: uppercase;
     }
 
     &__number {
         display: inline-flex;
-        font-size: 60px;
-        color: $yellow;
         font-size: 144px;
+        color: $yellow;
 
         p {
-            text-indent: -10px;
             line-height: 1;
+            text-indent: -10px;
         }
         span {
-            font-size: 36px;
             font-size: 60px;
         }
     }    

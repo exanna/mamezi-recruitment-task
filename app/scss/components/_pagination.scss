@@ -8,10 +8,10 @@
 
     &__button {
         outline: none;
-        background-color: transparent;
         border: none;
-        color: $red;
+        background-color: transparent;
         font-size: 1.2rem;
+        color: $red;
         transition: transform .2s ease;
 
         &:hover {

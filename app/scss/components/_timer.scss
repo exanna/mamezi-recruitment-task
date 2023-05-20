@@ -1,19 +1,19 @@
 .timer {
+    border: 3px solid $white;
+    padding: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 10px;
-    border: 3px solid $white;
 
     @include mq(small) {
         flex: 1;
     }
 
     &__info {
-        text-align: center;
         font-size: 16px;
         color: $white;
+        text-align: center;
         text-transform: uppercase;
     }
 
