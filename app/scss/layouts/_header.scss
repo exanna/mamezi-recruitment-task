@@ -1,175 +1,65 @@
 .header {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
     background-color: $red;
-    gap: 10px;
-    padding: 20px 30px;
+    gap: 50px;
+    padding: 2%; 
 
-    @media(min-width: 811px) {
-        
-    }
-}
-
-.promo {
-    position: relative;
-    min-height: 100px;
-    width: 100%;
-
-    @media(min-width: 811px) {
-        width: 50%;        
-    }
-    // border: 1px solid green;
-
-    &__img-wrapper {
-        position: absolute;
-        height: 100%;
-        top: 0;
-        left: 0;
+    @include mq(small) {
+        gap: 20px;
     }
 
-    &__headline {
-        position: absolute;
-        left: 45px;
-        top: 50%;
-        transform: translateY(-50%);
-        font-size: 30px;
-        text-transform: uppercase;
-        line-height: 1;
-
-        // @media(min-width: 811px) {
-        //     font-size: 60px;
-        //     left: 90px;
-        // }
-
-        @media(min-width: 992px) {
-            font-size: 50px;
-            left: 90px;
-        }
+    @include mq(medium) {
+        gap: 20px;
+        padding: 2% 5%;
     }
 
-    &__headline--first-word {
-        font-weight: 700;
-        color: $yellow;        
+    @include mq(large) {
+        flex-wrap: nowrap;
+        padding: 2% 2%;
     }
 
-    &__text {
-        background-color: $black;
-        font-size: 14px;
-        color: $white;
-        position: absolute;
-        top: 20%;
-        transform: translateY(-50%);
-        left: 180px;
-        padding: 3px 5px;
-        text-transform: uppercase;
-
-        // top: 30%;
-        // left: 360px;
-        // font-size: 24px;
-
-        @media(min-width: 992px) {
-            top: 30%;
-            left: 360px;
-            font-size: 24px;
-        }
-        &::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            width: 0;
-            height: 0;
-            border: 20px solid transparent;
-            border-top: 0;
-            border-left: 20px solid $black;
-        }
+    @include mq(extra-large) {
+        padding: 0 2%;
     }
 
-    &__text--first-word {
-        font-weight: 700;
-    }
-
-    &__circle {
-        background-color: $white;
+    &__promo {
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        position: absolute;
-        right: 10px;
-        bottom: -80px;
-        width: 100px;
-        height: 100px;
-        border-radius: 100%;
+        width: 100%;
+    }
 
-        @media (min-width: 600px) {
-            right: 30px;
-            bottom: 0px;
+    &__item {
+        width: 100%;
+
+        @include mq(small) {
+            display: flex;
+            gap: 20px;
         }
 
-        @media(min-width: 811px) {
-            right: 30px;
-            bottom: -25px;       
-        }
-
-        @media(min-width: 992px) {
-            right: 0;
-            bottom: -35px;
-        }
-
-        @media(min-width: 1200px) {
-            right: 100px;
-        }
-
-        img {
-            width: 30%;
-            transform: translate(5px, 5px);
-        }
-
-        p {
-            transform: rotate(15deg);
-            text-align: center;
-            line-height: 1.1;
+        @include mq(large) {
+            align-items: center;
         }
     }
 }
 
 .percent-info { 
-    display: inline-block;
-    vertical-align: top;
-    width: 80%;
+    text-align: center;
 
-    @media (min-width: 600px) {
-        width: 30%;
-    }
-
-    @media(min-width: 811px) {
-        width: 15%;        
-    }
-
-    @media(min-width: 1200px) {
-        width: 25%;        
+    @include mq(small) {
+        text-align: left;
     }
 
     &__text {
         text-transform: uppercase;
-        font-size: 14px;
+        font-size: 16px;
         width: 100%;
-
-        @media (min-width: 1200px){
-            font-size: 18px;       
-        }
     }
 
     &__number {
         display: inline-flex;
-        font-size: 80px;
+        font-size: 60px;
         color: $yellow;
-        margin-top: -10px;
-
-        @media (min-width: 1200px){
-            font-size: 144px;       
-        }
+        font-size: 144px;
 
         p {
             text-indent: -10px;
@@ -177,11 +67,9 @@
         }
         span {
             font-size: 36px;
-
-            @media (min-width: 1200px) {
-                font-size: 60px;            
-            }
+            font-size: 60px;
         }
     }    
 }
+
 

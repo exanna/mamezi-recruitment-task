@@ -4,7 +4,7 @@
     flex-direction: column;
     gap: 10px;
     
-    @media (min-width: 810px) {
+    @include mq(medium) {
         flex-direction: row;
         justify-content: space-between;
     }
@@ -16,13 +16,13 @@
         width: 100%;
         gap: 5px;
 
-        @media (min-width: 810px) {
+        @include mq(medium) {
             width: auto;
         }
     }
 
     &__item--right {
-        @media (min-width: 810px) {
+        @include mq(medium) {
             align-self: flex-end;
         }
     }
