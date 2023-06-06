@@ -74,7 +74,7 @@ class ProductLoader {
 class PromotionTimer {
     constructor() {
         this.timerElement = document.querySelector(".js-timer");
-        this.targetDate = new Date("2023-05-28T00:00:00");
+        this.targetDate = new Date("2023-06-28T00:00:00");
         this.timer = null;
     }
 
